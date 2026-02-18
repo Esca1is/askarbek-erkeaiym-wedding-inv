@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erkeayim & Askarbek</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:'Cormorant Garamond', serif;
+    background:#f9f6f2;
+    color:#3e3a36;
+    text-align:center;
+}
+
+.section{
+    padding:60px 20px;
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s ease;
+}
+
+.section.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* HERO */
+.hero{
+    position:relative;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+}
+
+.hero img{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(65%);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{
+    font-size:32px;
+    letter-spacing:3px;
+    font-weight:600;
+}
+
+/* BUTTON */
+.button{
+    margin-top:30px;
+    padding:12px 30px;
+    border-radius:40px;
+    border:1px solid #b58a5a;
+    background:transparent;
+    color:#b58a5a;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.button:hover{
+    background:#b58a5a;
+    color:white;
+}
+
+/* TEXT */
+.invite-text{
+    font-size:20px;
+    line-height:1.8;
+    max-width:700px;
+    margin:auto;
+}
+
+/* CALENDAR */
+.calendar-box{
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    display:inline-block;
+}
+
+.calendar-header{
+    font-size:34px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.calendar-title{
+    font-size:26px;
+    margin-bottom:25px;
+}
+
+.calendar{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:10px;
+    font-size:18px;
+}
+
+.calendar div{
+    padding:8px 0;
+}
+
+.heart-day{
+    position:relative;
+    font-weight:700;
+    color:#b58a5a;
+}
+
+.heart-day::before{
+    content:"❤";
+    position:absolute;
+    font-size:44px;
+    color:red;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    z-index:-1;
+}
+
+/* LOCATION */
+.location{
+    font-size:20px;
+    margin-bottom:15px;
+}
+
+/* PHOTO */
+.photo-wrapper{
+    position:relative;
+    max-width:700px;
+    margin:auto;
+}
+
+.photo-wrapper img{
+    width:100%;
+    border-radius:25px;
+}
+
+.countdown{
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    background:rgba(0,0,0,0.65);
+    color:white;
+    padding:18px 30px;
+    border-radius:30px;
+    text-align:center;
+}
+
+.countdown-title{
+    font-size:16px;
+    margin-bottom:6px;
+    letter-spacing:1px;
+}
+
+.countdown-timer{
+    font-size:26px;
+    font-weight:600;
+}
+
+/* INFO BOX */
+.info-box{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:40px 25px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    line-height:1.8;
+    font-size:18px;
+}
+
+/* FINAL TEXT */
+.final-text{
+    font-size:22px;
+    margin-top:40px;
+    font-style:italic;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+    .hero h1{font-size:24px;}
+    .countdown-timer{font-size:20px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+    <img src="photo1.jpg" alt="">
+    <div class="hero-content">
+        <h1>KYZ UZATUU & WEDDING DAY</h1>
+        <h1>ERKEAYIM & ASKARBEK</h1>
+    </div>
+</div>
+
+<!-- MUSIC BUTTON -->
+<div class="section">
+    <button class="button" onclick="toggleMusic()">Включить музыку</button>
+</div>
+
+<!-- INVITE TEXT -->
+<div class="section">
+    <div class="invite-text">
+        Когда две судьбы становятся одной,<br>
+        рождается новая история любви.<br><br>
+        <strong>Аскарбек и Эркеайым</strong><br>
+        с радостью приглашают вас стать частью особенного дня,<br>
+        когда наши сердца соединятся навсегда.
+    </div>
+</div>
+
+<!-- CALENDAR -->
+<div class="section">
+    <div class="calendar-box">
+        <div class="calendar-header">Дата свадьбы</div>
+        <div class="calendar-title">Март 2026</div>
+
+        <div class="calendar">
+            <div>Пн</div><div>Вт</div><div>Ср</div><div>Чт</div><div>Пт</div><div>Сб</div><div>Вс</div>
+            <div></div><div></div><div></div><div></div><div></div><div></div><div>1</div>
+            <div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div>
+            <div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div><div>15</div>
+            <div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div><div>22</div>
+            <div>23</div><div>24</div><div>25</div><div>26</div><div>27</div>
+            <div class="heart-day">28</div>
+            <div>29</div><div>30</div><div>31</div>
+        </div>
+    </div>
+</div>
+
+<!-- LOCATION -->
+<div class="section">
+    <div class="location">
+        ресторан “ARIA GRAND” г.Бишкек, ул. Юнусалиева 33
+    </div>
+    <button class="button" onclick="window.open('https://2gis.kg/bishkek/firm/70000001105186015')">2GIS</button>
+    <div style="margin-top:15px;font-size:18px;">
+        Начало мероприятия в 17:00
+    </div>
+</div>
+
+<!-- PHOTO 2 -->
+<div class="section">
+    <div class="photo-wrapper">
+        <img src="photo2.jpg" alt="">
+        <div class="countdown">
+            <div class="countdown-title">До свадьбы осталось</div>
+            <div class="countdown-timer" id="countdown"></div>
+        </div>
+    </div>
+</div>
+
+<!-- RESPONSE TEXT -->
+<div class="section">
+    <div style="font-size:20px;font-weight:600;">
+        Просьба написать нам ответ и количество гостей на WhatsApp
+    </div>
+</div>
+
+<!-- THIRD PHOTO -->
+<div class="section">
+    <img src="photo3.jpg" style="width:100%;max-width:700px;border-radius:25px;">
+</div>
+
+<!-- FINAL TEXT -->
+<div class="section">
+    <div class="final-text">
+        Ваше присутствие станет для нас самым ценным подарком.
+    </div>
+</div>
+
+<audio id="music" src="music.mp3"></audio>
+
+<script>
+const sections=document.querySelectorAll('.section');
+window.addEventListener('scroll',()=>{
+    sections.forEach(sec=>{
+        if(sec.getBoundingClientRect().top<window.innerHeight-100){
+            sec.classList.add('show');
+        }
+    });
+});
+
+function toggleMusic(){
+    const music=document.getElementById('music');
+    music.paused?music.play():music.pause();
+}
+
+const weddingDate=new Date("March 28, 2026 17:00:00").getTime();
+
+setInterval(()=>{
+    const now=new Date().getTime();
+    const diff=weddingDate-now;
+
+    const d=Math.floor(diff/(1000*60*60*24));
+    const h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+    const m=Math.floor((diff%(1000*60*60))/(1000*60));
+    const s=Math.floor((diff%(1000*60))/1000);
+
+    document.getElementById("countdown").innerHTML=
+    `${d} д ${h} ч ${m} мин ${s} сек`;
+},1000);
+</script>
+
+</body>
+</html>
